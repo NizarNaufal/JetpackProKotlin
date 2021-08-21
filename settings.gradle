@@ -1,0 +1,2 @@
+rootProject.name = "Belajar Jetpack Pro"
+include ':app'

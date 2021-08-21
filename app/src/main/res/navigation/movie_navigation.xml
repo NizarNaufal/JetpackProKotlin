@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movie_navigation"
+    app:startDestination="@id/navigation_movie">
+
+    <fragment
+        android:id="@+id/navigation_movie"
+        android:name="id.dicodingnizar.belajarjetpackpro.ui.movie.MovieFragment"
+        android:label="@string/tab_title_movie"
+        tools:layout="@layout/fragment_movie">
+    <action
+        android:id="@+id/action_to_detail_movie"
+        app:destination="@id/navigation_detail_movie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tv_show"
+        android:name="id.dicodingnizar.belajarjetpackpro.ui.movieTV.TvShowFragment"
+        android:label="@string/tab_title_tvshow"
+        tools:layout="@layout/fragment_tv_show">
+        <action
+            android:id="@+id/action_to_detail_movie"
+            app:destination="@id/navigation_detail_movie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail_movie"
+        android:name="id.dicodingnizar.belajarjetpackpro.ui.detail.DetailFragment"
+        android:label="@string/toolbar_title_detail_movie"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="extraData"
+            android:defaultValue="false"
+            app:argType="string" />
+        <argument
+            android:name="extraType"
+            android:defaultValue="false"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_back_to_movie"
+            app:destination="@id/navigation_movie" />
+        <action
+            android:id="@+id/action_navigation_back_to_tv_show"
+            app:destination="@id/navigation_tv_show" />
+    </fragment>
+
+</navigation>
